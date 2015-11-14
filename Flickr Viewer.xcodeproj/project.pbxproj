@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9418351A1BF7904D001054C5 /* FlickrViewerTVCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941835191BF7904D001054C5 /* FlickrViewerTVCTableViewController.m */; };
+		941E76EA1BF5F55C00AA709A /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941E76E91BF5F55C00AA709A /* Main_iPad.storyboard */; };
 		94FC87101BF36B82006F8DBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FC870F1BF36B82006F8DBA /* main.m */; };
 		94FC87131BF36B82006F8DBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FC87121BF36B82006F8DBA /* AppDelegate.m */; };
 		94FC87161BF36B82006F8DBA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FC87151BF36B82006F8DBA /* ViewController.m */; };
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		941835181BF7904D001054C5 /* FlickrViewerTVCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrViewerTVCTableViewController.h; sourceTree = "<group>"; };
+		941835191BF7904D001054C5 /* FlickrViewerTVCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrViewerTVCTableViewController.m; sourceTree = "<group>"; };
+		941E76E91BF5F55C00AA709A /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		94FC870B1BF36B81006F8DBA /* Flickr Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flickr Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94FC870F1BF36B82006F8DBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94FC87111BF36B82006F8DBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,11 +113,14 @@
 				94FC87141BF36B82006F8DBA /* ViewController.h */,
 				94FC87151BF36B82006F8DBA /* ViewController.m */,
 				94FC87171BF36B82006F8DBA /* Main.storyboard */,
-				94FC871D1BF36B82006F8DBA /* Assets.xcassets */,
+				941E76E91BF5F55C00AA709A /* Main_iPad.storyboard */,
 				94FC871F1BF36B82006F8DBA /* LaunchScreen.storyboard */,
+				94FC871D1BF36B82006F8DBA /* Assets.xcassets */,
 				94FC87221BF36B82006F8DBA /* Info.plist */,
 				94FC871A1BF36B82006F8DBA /* Flickr_Viewer.xcdatamodeld */,
 				94FC870E1BF36B82006F8DBA /* Supporting Files */,
+				941835181BF7904D001054C5 /* FlickrViewerTVCTableViewController.h */,
+				941835191BF7904D001054C5 /* FlickrViewerTVCTableViewController.m */,
 			);
 			path = "Flickr Viewer";
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94FC87211BF36B82006F8DBA /* LaunchScreen.storyboard in Resources */,
+				941E76EA1BF5F55C00AA709A /* Main_iPad.storyboard in Resources */,
 				94FC871E1BF36B82006F8DBA /* Assets.xcassets in Resources */,
 				94FC87191BF36B82006F8DBA /* Main.storyboard in Resources */,
 			);
@@ -278,6 +287,7 @@
 			files = (
 				94FC87161BF36B82006F8DBA /* ViewController.m in Sources */,
 				94FC87131BF36B82006F8DBA /* AppDelegate.m in Sources */,
+				9418351A1BF7904D001054C5 /* FlickrViewerTVCTableViewController.m in Sources */,
 				94FC871C1BF36B82006F8DBA /* Flickr_Viewer.xcdatamodeld in Sources */,
 				94FC87101BF36B82006F8DBA /* main.m in Sources */,
 			);
@@ -370,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -408,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,6 +434,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RSO.Flickr-Viewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -435,6 +446,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RSO.Flickr-Viewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -505,6 +517,7 @@
 				94FC873D1BF36B82006F8DBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94FC873E1BF36B82006F8DBA /* Build configuration list for PBXNativeTarget "Flickr ViewerTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +526,7 @@
 				94FC87401BF36B82006F8DBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94FC87411BF36B82006F8DBA /* Build configuration list for PBXNativeTarget "Flickr ViewerUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +535,7 @@
 				94FC87431BF36B82006F8DBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
