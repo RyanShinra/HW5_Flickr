@@ -6,13 +6,48 @@
 //  Copyright © 2015 Ryan Osterday. All rights reserved.
 //
 
-#import "FlickrViewerTVCTableViewController.h"
+#import "FlickrViewerTVC.h"
+#import "FlickrFetcher.h"
+#import "FlickrPhotos.h"
 
-@interface FlickrViewerTVCTableViewController ()
 
+@interface FlickrViewerTVC ()
+- (void) fetchTopPhotos;
+@property (nonatomic, strong) NSArray<NSDictionary*>* recentPhotos;
 @end
 
-@implementation FlickrViewerTVCTableViewController
+@implementation FlickrViewerTVC
+
+- (IBAction)  fetchTopPhotos
+{
+    //TODO: Add refresh control
+//    
+//    NSURL* urlForTopPlaces = [FlickrFetcher URLforTopPlaces];
+//
+//    NSData* topPlacesJson = [NSData dataWithContentsOfURL:urlForTopPlaces];
+//    NSDictionary* topPlacesDict = [NSJSONSerialization JSONObjectWithData:topPlacesJson options:0 error:NULL];
+//   // NSLog(@"%@", topPlacesDict);
+//    
+    
+    
+    dispatch_queue_t backgroundQ = dispatch_queue_create("Fetching Recent Photo Info Queue", NULL);
+    [self.refreshControl beginRefreshing];
+    dispatch_async (backgroundQ, ^{
+        
+        if (!self.recentPhotos) {
+            self.recentPhotos = [FlickrPhotos recentPhotosInfo];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.refreshControl endRefreshing];
+            [self.tableView reloadData];
+            //[self.view setNeedsDisplay];
+        });
+    });
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +57,10 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    [self fetchTopPhotos];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,24 +71,34 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    if (self.recentPhotos) {
+#warning I need to figure this out
+        return 1;
+    }
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
+    
+    if (self.recentPhotos) {
+        return self.recentPhotos.count;
+    }
+    
     return 0;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlickrCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    
+    cell.textLabel.text = [FlickrPhotos photoTitle: self.recentPhotos[indexPath.row]];
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

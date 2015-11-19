@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FlickrViewerTVCTableViewController : UITableViewController
+@interface FlickrViewerTVC : UITableViewController
 
 @end
