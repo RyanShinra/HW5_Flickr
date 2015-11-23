@@ -9,7 +9,7 @@
 #import "FlickrViewerTVC.h"
 #import "FlickrFetcher.h"
 #import "FlickrPhotos.h"
-
+#import "ImageViewController.h"
 
 @interface FlickrViewerTVC ()
 - (void) fetchTopPhotos;
@@ -134,14 +134,40 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    UIViewController* destVC = [segue destinationViewController];
+    if ([destVC isKindOfClass:[ImageViewController class]]) {
+        ImageViewController* destIVC = (ImageViewController*) destVC;
+
+        if ([sender isKindOfClass:[UITableViewCell class]]) {
+            UITableViewCell* sourceCell = (UITableViewCell*) sender;
+            
+            //TODO: If this section gets unwieldy, we should move it to its own funciton
+            {
+                //We have to ask the table which row was tapped...
+                NSInteger selectedRow = [[self.tableView indexPathForCell:sourceCell]row];
+                
+                //fetch the photo meta data out of the array
+                NSDictionary* selectedPhoto = self.recentPhotos[selectedRow];
+                
+                //Get the URL for the photo in "Normal Size"
+                NSURL* photoURL = [FlickrFetcher URLforPhoto:selectedPhoto
+                                                      format:FlickrPhotoFormatLarge];
+                
+                //Inform the transitioning VC that it will be going to this address
+                destIVC.imageLocation = photoURL;
+                
+            }
+        }
+    }
+    
 }
-*/
+
 
 @end

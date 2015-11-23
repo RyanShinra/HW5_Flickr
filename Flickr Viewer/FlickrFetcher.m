@@ -53,7 +53,9 @@
 		case FlickrPhotoFormatOriginal:  formatString = @"o"; break;
 	}
     
-	return [NSString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@_%@.%@", farm, server, photo_id, secret, formatString, fileType];
+#warning Using HTTPS now (may cause issues)
+	//return [NSString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@_%@.%@", farm, server, photo_id, secret, formatString, fileType];
+    return [NSString stringWithFormat:@"https://farm%@.static.flickr.com/%@/%@_%@_%@.%@", farm, server, photo_id, secret, formatString, fileType];
 }
 
 + (NSURL *)URLforPhoto:(NSDictionary *)photo format:(FlickrPhotoFormat)format;
