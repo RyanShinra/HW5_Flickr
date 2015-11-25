@@ -14,5 +14,5 @@
 ///This will block the calling thread, so make sure to put it on the background
 + (NSArray<NSDictionary*>*) recentPhotosInfo;
 + (NSString*) photoTitle: (NSDictionary*) photo;
-
++ (NSString*) photoDescription: (NSDictionary*) photo;
 @end

@@ -8,6 +8,7 @@
 
 #import "ImageViewController.h"
 
+
 @interface ImageViewController ()
 - (void) downloadImage;
 
@@ -15,7 +16,7 @@
 @property (strong, nonatomic) UIImage* image;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
-
+@property (nonatomic) CGFloat minimumZoom;
 @end
 
 @implementation ImageViewController
@@ -24,6 +25,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.progressView.progress = 0;
+    
+    //NOTE: ATTENTION: This is very important; the image won't shop up without it.
     [self.scrollView addSubview:self.imageView];
 }
 
@@ -140,7 +143,8 @@
     // self.scrollView could be nil on the next line if outlet-setting has not happened yet
     self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
     [self.scrollView zoomToRect:self.imageView.frame animated:NO];
-
+    self.minimumZoom = self.scrollView.zoomScale;
+    //self.scrollView.minimumZoomScale = self.minimumZoom;
 }
 
 - (void) setScrollView:(UIScrollView *)scrollView
@@ -168,5 +172,10 @@
     return self.imageView;
 }
 
-
+- (void)viewDidLayoutSubviews
+{
+    [self.scrollView zoomToRect:self.imageView.frame animated:YES];
+    self.minimumZoom = self.scrollView.zoomScale;
+    //self.scrollView.minimumZoomScale = self.minimumZoom;
+}
 @end

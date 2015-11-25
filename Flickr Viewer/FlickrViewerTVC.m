@@ -27,16 +27,14 @@
 //    NSData* topPlacesJson = [NSData dataWithContentsOfURL:urlForTopPlaces];
 //    NSDictionary* topPlacesDict = [NSJSONSerialization JSONObjectWithData:topPlacesJson options:0 error:NULL];
 //   // NSLog(@"%@", topPlacesDict);
-//    
+    //
     
     
     dispatch_queue_t backgroundQ = dispatch_queue_create("Fetching Recent Photo Info Queue", NULL);
     [self.refreshControl beginRefreshing];
     dispatch_async (backgroundQ, ^{
         
-        if (!self.recentPhotos) {
-            self.recentPhotos = [FlickrPhotos recentPhotosInfo];
-        }
+        self.recentPhotos = [FlickrPhotos recentPhotosInfo];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -95,7 +93,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlickrCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [FlickrPhotos photoTitle: self.recentPhotos[indexPath.row]];
+    NSString* photoTitle = [FlickrPhotos photoTitle: self.recentPhotos[indexPath.row]];
+    cell.textLabel.text = photoTitle;
+    NSString* photoDescription = [FlickrPhotos photoDescription:self.recentPhotos[indexPath.row]];
+    cell.detailTextLabel.text = photoDescription;
     return cell;
 }
 
