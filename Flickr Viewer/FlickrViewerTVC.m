@@ -20,8 +20,7 @@
 
 - (IBAction)  fetchTopPhotos
 {
-    //TODO: Add refresh control
-//    
+//
 //    NSURL* urlForTopPlaces = [FlickrFetcher URLforTopPlaces];
 //
 //    NSData* topPlacesJson = [NSData dataWithContentsOfURL:urlForTopPlaces];
@@ -90,7 +89,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlickrCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FlickrCell"
+                                                            forIndexPath:indexPath];
     
     // Configure the cell...
     NSString* photoTitle = [FlickrPhotos photoTitle: self.recentPhotos[indexPath.row]];

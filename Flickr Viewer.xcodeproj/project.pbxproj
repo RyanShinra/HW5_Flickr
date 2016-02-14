@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9415DA141C42A3E000A6D2C5 /* FlickrGeoPhotosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9415DA131C42A3E000A6D2C5 /* FlickrGeoPhotosTVC.m */; };
 		9418351A1BF7904D001054C5 /* FlickrViewerTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 941835191BF7904D001054C5 /* FlickrViewerTVC.m */; };
 		941835661BF8BF69001054C5 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 941835651BF8BF69001054C5 /* FlickrFetcher.m */; };
 		9418356E1BF8D17D001054C5 /* FlickrPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 9418356D1BF8D17D001054C5 /* FlickrPhotos.m */; };
 		941835711BFDDB9C001054C5 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941835701BFDDB9C001054C5 /* ImageViewController.m */; };
 		941E76EA1BF5F55C00AA709A /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941E76E91BF5F55C00AA709A /* Main_iPad.storyboard */; };
+		94367AAE1C70B56A00863434 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 94367AAD1C70B56A00863434 /* File */; };
 		94FC87101BF36B82006F8DBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FC870F1BF36B82006F8DBA /* main.m */; };
 		94FC87131BF36B82006F8DBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FC87121BF36B82006F8DBA /* AppDelegate.m */; };
 		94FC87191BF36B82006F8DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94FC87171BF36B82006F8DBA /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9415DA121C42A3E000A6D2C5 /* FlickrGeoPhotosTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrGeoPhotosTVC.h; sourceTree = "<group>"; };
+		9415DA131C42A3E000A6D2C5 /* FlickrGeoPhotosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrGeoPhotosTVC.m; sourceTree = "<group>"; };
 		941835181BF7904D001054C5 /* FlickrViewerTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrViewerTVC.h; sourceTree = "<group>"; };
 		941835191BF7904D001054C5 /* FlickrViewerTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FlickrViewerTVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		941835631BF8BF69001054C5 /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
@@ -50,6 +54,7 @@
 		9418356F1BFDDB9C001054C5 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		941835701BFDDB9C001054C5 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; usesTabs = 0; };
 		941E76E91BF5F55C00AA709A /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		94367AAD1C70B56A00863434 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		94FC870B1BF36B81006F8DBA /* Flickr Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flickr Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94FC870F1BF36B82006F8DBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94FC87111BF36B82006F8DBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -115,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				94FC87171BF36B82006F8DBA /* Main.storyboard */,
+				9415DA121C42A3E000A6D2C5 /* FlickrGeoPhotosTVC.h */,
+				9415DA131C42A3E000A6D2C5 /* FlickrGeoPhotosTVC.m */,
 				941E76E91BF5F55C00AA709A /* Main_iPad.storyboard */,
 				94FC871F1BF36B82006F8DBA /* LaunchScreen.storyboard */,
 			);
@@ -124,6 +131,7 @@
 		94FC87021BF36B81006F8DBA = {
 			isa = PBXGroup;
 			children = (
+				94367AAD1C70B56A00863434 /* File */,
 				94FC870D1BF36B82006F8DBA /* Flickr Viewer */,
 				94FC872A1BF36B82006F8DBA /* Flickr ViewerTests */,
 				94FC87351BF36B82006F8DBA /* Flickr ViewerUITests */,
@@ -297,6 +305,7 @@
 				941E76EA1BF5F55C00AA709A /* Main_iPad.storyboard in Resources */,
 				94FC871E1BF36B82006F8DBA /* Assets.xcassets in Resources */,
 				94FC87191BF36B82006F8DBA /* Main.storyboard in Resources */,
+				94367AAE1C70B56A00863434 /* File in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +337,7 @@
 				941835661BF8BF69001054C5 /* FlickrFetcher.m in Sources */,
 				941835711BFDDB9C001054C5 /* ImageViewController.m in Sources */,
 				94FC87101BF36B82006F8DBA /* main.m in Sources */,
+				9415DA141C42A3E000A6D2C5 /* FlickrGeoPhotosTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

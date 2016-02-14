@@ -134,17 +134,19 @@
 {
     self.imageView.image = newImage;
     
-    //We want to evaluate how to set the zoom to show the whole image at the start
-    
-
-    
+    //Reset the min/max zoom levels to allow for our zooming in a few lines
+    self.scrollView.minimumZoomScale = 0.2; //Magic number, we should make these constants.
+    self.scrollView.maximumZoomScale = 2.0;
+    self.scrollView.zoomScale = 1.0;
     self.imageView.frame = CGRectMake(0, 0, newImage.size.width, newImage.size.height);
-    
+
     // self.scrollView could be nil on the next line if outlet-setting has not happened yet
     self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
-    [self.scrollView zoomToRect:self.imageView.frame animated:NO];
+
+    CGRect newBounds = CGRectMake(0, 0, self.scrollView.contentSize.width, self.scrollView.contentSize.height);
+    [self.scrollView zoomToRect:newBounds animated:NO];
     self.minimumZoom = self.scrollView.zoomScale;
-    //self.scrollView.minimumZoomScale = self.minimumZoom;
+    self.scrollView.minimumZoomScale = self.minimumZoom;
 }
 
 - (void) setScrollView:(UIScrollView *)scrollView
@@ -174,8 +176,8 @@
 
 - (void)viewDidLayoutSubviews
 {
-    [self.scrollView zoomToRect:self.imageView.frame animated:YES];
-    self.minimumZoom = self.scrollView.zoomScale;
+    //[self.scrollView zoomToRect:self.imageView.frame animated:YES];
+//    self.minimumZoom = self.scrollView.zoomScale;
     //self.scrollView.minimumZoomScale = self.minimumZoom;
 }
 @end

@@ -1,0 +1,104 @@
+2016-02-14 08:05:04.136 Flickr Viewer[25796:7816071] https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&license=1,2,4,7&extras=original_format,description,geo,date_upload,owner_name&format=json&nojsoncallback=1&api_key=d1e215427c75feabe8d08a22999919e7
+2016-02-14 08:05:06.810 Flickr Viewer[25796:7816071] https://api.flickr.com/services/rest/?method=flickr.places.getTopPlacesList&place_type_id=7&format=json&nojsoncallback=1&api_key=d1e215427c75feabe8d08a22999919e7
+2016-02-14 08:05:11.262 Flickr Viewer[25796:7816972] England, United Kingdom : Snow Hill, England, United Kingdom
+2016-02-14 08:05:11.900 Flickr Viewer[25796:7817016] Provence-Alpes-Cote d'Azur, France : Istres, Provence-Alpes-Cote d'Azur, France
+2016-02-14 08:05:11.900 Flickr Viewer[25796:7817021] Aquitaine, France : Le Montaut, Aquitaine, France
+2016-02-14 08:05:11.900 Flickr Viewer[25796:7816938] Scotland, United Kingdom : Torrie, Scotland, United Kingdom
+2016-02-14 08:05:11.901 Flickr Viewer[25796:7816938] Rhone-Alpes, France : La Peisey, Rhone-Alpes, France
+2016-02-14 08:05:11.901 Flickr Viewer[25796:7817016] England, United Kingdom : Tame Barn, England, United Kingdom
+2016-02-14 08:05:11.917 Flickr Viewer[25796:7817016] Nord-Pas-de-Calais, France : Lens, Nord-Pas-de-Calais, France
+2016-02-14 08:05:11.917 Flickr Viewer[25796:7816957] Rhone-Alpes, France : Courchevel, Rhone-Alpes, France
+2016-02-14 08:05:11.918 Flickr Viewer[25796:7816927] Rhone-Alpes, France : Givors, Rhone-Alpes, France
+2016-02-14 08:05:11.931 Flickr Viewer[25796:7817017] England, United Kingdom : Red Barns, England, United Kingdom
+2016-02-14 08:05:11.932 Flickr Viewer[25796:7817017] North Abaco, The Bahamas : Green Turtle Cay, North Abaco, The Bahamas
+2016-02-14 08:05:11.939 Flickr Viewer[25796:7816927] Brittany, France : Le Folgoet, Brittany, France
+2016-02-14 08:05:11.939 Flickr Viewer[25796:7817017] Provence-Alpes-Cote d'Azur, France : Grasse, Provence-Alpes-Cote d'Azur, France
+2016-02-14 08:05:11.940 Flickr Viewer[25796:7817017] Scotland, United Kingdom : Souther House, Scotland, United Kingdom
+2016-02-14 08:05:11.941 Flickr Viewer[25796:7816927] Provence-Alpes-Cote d'Azur, France : La Ciotat, Provence-Alpes-Cote d'Azur, France
+2016-02-14 08:05:11.944 Flickr Viewer[25796:7817017] Lower Normandy, France : Honfleur, Lower Normandy, France
+2016-02-14 08:05:11.944 Flickr Viewer[25796:7816957] Rhone-Alpes, France : Chateauneuf-Du-Rhone, Rhone-Alpes, France
+2016-02-14 08:05:11.944 Flickr Viewer[25796:7816981] Franche-Comte, France : Le Francois, Franche-Comte, France
+2016-02-14 08:05:11.949 Flickr Viewer[25796:7816981] Ile-de-France, France : Conflans-Ste.-Honorine, Ile-de-France, France
+2016-02-14 08:05:11.954 Flickr Viewer[25796:7816957] Aquitaine, France : Leognan, Aquitaine, France
+2016-02-14 08:05:11.954 Flickr Viewer[25796:7816981] Pays de la Loire, France : Clisson, Pays de la Loire, France
+2016-02-14 08:05:11.955 Flickr Viewer[25796:7817017] Centre region, France : Long, Centre region, France
+2016-02-14 08:05:11.962 Flickr Viewer[25796:7816927] Brittany, France : Le Conquet, Brittany, France
+2016-02-14 08:05:11.963 Flickr Viewer[25796:7816957] Centre region, France : L'Erable, Centre region, France
+2016-02-14 08:05:11.963 Flickr Viewer[25796:7817017] Upper Normandy, France : Etretat, Upper Normandy, France
+2016-02-14 08:05:11.964 Flickr Viewer[25796:7816957] Lower Normandy, France : Langrune-sur-Mer, Lower Normandy, France
+2016-02-14 08:05:11.967 Flickr Viewer[25796:7817017] Northern Territory, Australia : Mount Zeil, Northern Territory, Australia
+2016-02-14 08:05:11.969 Flickr Viewer[25796:7816957] England, United Kingdom : Structon's Heath, England, United Kingdom
+2016-02-14 08:05:11.982 Flickr Viewer[25796:7816927] Centre region, France : Germigny-Des-Pres, Centre region, France
+2016-02-14 08:05:11.984 Flickr Viewer[25796:7816927] Provence-Alpes-Cote d'Azur, France : Draguignan, Provence-Alpes-Cote d'Azur, France
+2016-02-14 08:05:12.000 Flickr Viewer[25796:7816981] Pays de la Loire, France : Le Mans, Pays de la Loire, France
+2016-02-14 08:05:12.007 Flickr Viewer[25796:7816981] Corsica, France : Ghisonaccia, Corsica, France
+2016-02-14 08:05:12.021 Flickr Viewer[25796:7816957] Champagne-Ardenne, France : Fontaine-sur-Ay, Champagne-Ardenne, France
+2016-02-14 08:05:12.026 Flickr Viewer[25796:7816944] Rhone-Alpes, France : Cubusson, Rhone-Alpes, France
+2016-02-14 08:05:12.033 Flickr Viewer[25796:7816957] Provence-Alpes-Cote d'Azur, France : Mane, Provence-Alpes-Cote d'Azur, France
+2016-02-14 08:05:12.048 Flickr Viewer[25796:7816957] Rhone-Alpes, France : Lans-en-Vercors, Rhone-Alpes, France
+2016-02-14 08:05:12.049 Flickr Viewer[25796:7817017] Limousin, France : Felletin, Limousin, France
+2016-02-14 08:05:12.052 Flickr Viewer[25796:7816981] Brittany, France : Le Pouldu, Brittany, France
+2016-02-14 08:05:12.053 Flickr Viewer[25796:7817017] Poitou-Charentes, France : Chatelaillon-Plage, Poitou-Charentes, France
+2016-02-14 08:05:12.058 Flickr Viewer[25796:7816981] Alsace, France : Geishouse, Alsace, France
+2016-02-14 08:05:12.058 Flickr Viewer[25796:7816957] Provence-Alpes-Cote d'Azur, France : Fos-sur-Mer, Provence-Alpes-Cote d'Azur, France
+2016-02-14 08:05:12.064 Flickr Viewer[25796:7816957] Brittany, France : Kerficien, Brittany, France
+2016-02-14 08:05:12.066 Flickr Viewer[25796:7816957] England, United Kingdom : Spartt's Green, England, United Kingdom
+2016-02-14 08:05:12.067 Flickr Viewer[25796:7816944] Pays de la Loire, France : La Roche-sur-Yon, Pays de la Loire, France
+2016-02-14 08:05:12.073 Flickr Viewer[25796:7816944] Rhone-Alpes, France : Le Plantay, Rhone-Alpes, France
+2016-02-14 08:05:12.076 Flickr Viewer[25796:7816944] Franche-Comte, France : Chateau-Chalon, Franche-Comte, France
+2016-02-14 08:05:12.091 Flickr Viewer[25796:7816957] Auvergne, France : Lempdes, Auvergne, France
+2016-02-14 08:05:12.092 Flickr Viewer[25796:7816927] Languedoc-Roussillon, France : Le Grau-d'Agde, Languedoc-Roussillon, France
+2016-02-14 08:05:12.093 Flickr Viewer[25796:7816927] Rhone-Alpes, France : La Roche-sur-le-Buis, Rhone-Alpes, France
+2016-02-14 08:05:12.094 Flickr Viewer[25796:7816944] Lower Normandy, France : Herqueville, Lower Normandy, France
+2016-02-14 08:05:12.094 Flickr Viewer[25796:7816938] Provence-Alpes-Cote d'Azur, France : Marseille, Provence-Alpes-Cote d'Azur, France
+2016-02-14 08:05:12.100 Flickr Viewer[25796:7816927] Provence-Alpes-Cote d'Azur, France : Le Noyer, Provence-Alpes-Cote d'Azur, France
+2016-02-14 08:05:12.100 Flickr Viewer[25796:7816938] Corsica, France : Corbara, Corsica, France
+2016-02-14 08:05:12.104 Flickr Viewer[25796:7816944] Guanacaste Province, Costa Rica : Puerto Viejo, Guanacaste Province, Costa Rica
+2016-02-14 08:05:12.113 Flickr Viewer[25796:7817017] Ile-de-France, France : Gif-sur-Yvette, Ile-de-France, France
+2016-02-14 08:05:12.121 Flickr Viewer[25796:7816944] Rhone-Alpes, France : Macot-La-Plagne, Rhone-Alpes, France
+2016-02-14 08:05:12.152 Flickr Viewer[25796:7817017] Aquitaine, France : Domme, Aquitaine, France
+2016-02-14 08:05:12.168 Flickr Viewer[25796:7816938] Lorraine, France : Delme, Lorraine, France
+2016-02-14 08:05:12.175 Flickr Viewer[25796:7817017] Languedoc-Roussillon, France : Coustaussa, Languedoc-Roussillon, France
+2016-02-14 08:05:12.206 Flickr Viewer[25796:7816944] Languedoc-Roussillon, France : Fanjeaux, Languedoc-Roussillon, France
+2016-02-14 08:05:12.208 Flickr Viewer[25796:7817017] Rhone-Alpes, France : Grenoble, Rhone-Alpes, France
+2016-02-14 08:05:12.217 Flickr Viewer[25796:7816938] Limousin, France : La Foret-Chabrouty, Limousin, France
+2016-02-14 08:05:12.726 Flickr Viewer[25796:7817017] Wales, United Kingdom : Wood, Wales, United Kingdom
+2016-02-14 08:05:19.637 Flickr Viewer[25796:7817007] Lower Normandy, France : Mont Saint-Michel, Lower Normandy, France
+2016-02-14 08:05:19.679 Flickr Viewer[25796:7816944] Provence-Alpes-Cote d'Azur, France : Les Salles-sur-Verdon, Provence-Alpes-Cote d'Azur, France
+2016-02-14 08:05:19.855 Flickr Viewer[25796:7816944] England, United Kingdom : Woodside, England, United Kingdom
+2016-02-14 08:05:19.911 Flickr Viewer[25796:7816944] Champagne-Ardenne, France : Dormans, Champagne-Ardenne, France
+2016-02-14 08:05:20.117 Flickr Viewer[25796:7817007] Ile-de-France, France : Goussainville, Ile-de-France, France
+2016-02-14 08:05:20.152 Flickr Viewer[25796:7817007] Brittany, France : Lannilis, Brittany, France
+2016-02-14 08:05:20.167 Flickr Viewer[25796:7816983] Rhone-Alpes, France : Le Forret, Rhone-Alpes, France
+2016-02-14 08:05:20.181 Flickr Viewer[25796:7816983] Brittany, France : Kernelehen, Brittany, France
+2016-02-14 08:05:20.224 Flickr Viewer[25796:7817007] Lower Normandy, France : Granville, Lower Normandy, France
+2016-02-14 08:05:20.251 Flickr Viewer[25796:7816983] Rhone-Alpes, France : Lyon, Rhone-Alpes, France
+2016-02-14 08:05:20.264 Flickr Viewer[25796:7816944] Northern Ireland, United Kingdom : Ulster Flying Club, United Kingdom
+2016-02-14 08:05:20.297 Flickr Viewer[25796:7816987] Franche-Comte, France : Lods, Franche-Comte, France
+2016-02-14 08:05:20.326 Flickr Viewer[25796:7816987] Provence-Alpes-Cote d'Azur, France : Chateauneuf-Les-Martigues, Provence-Alpes-Cote d'Azur, France
+2016-02-14 08:05:20.369 Flickr Viewer[25796:7816944] Centre region, France : Dampierre-en-Burly, Centre region, France
+2016-02-14 08:05:20.387 Flickr Viewer[25796:7817007] Brittany, France : Etel, Brittany, France
+2016-02-14 08:05:20.423 Flickr Viewer[25796:7816987] Auvergne, France : Courtade, Auvergne, France
+2016-02-14 08:05:20.424 Flickr Viewer[25796:7816978] Burgundy, France : Dijon, Burgundy, France
+2016-02-14 08:05:20.445 Flickr Viewer[25796:7816987] Languedoc-Roussillon, France : Collioure, Languedoc-Roussillon, France
+2016-02-14 08:05:20.480 Flickr Viewer[25796:7816987] England, United Kingdom : Walcot, England, United Kingdom
+2016-02-14 08:05:20.490 Flickr Viewer[25796:7816987] Rhone-Alpes, France : Granier, Rhone-Alpes, France
+2016-02-14 08:05:20.533 Flickr Viewer[25796:7816978] Paijanne Tavastia, Finland : Lahti, Paijanne Tavastia, Finland
+2016-02-14 08:05:20.549 Flickr Viewer[25796:7816987] Corsica, France : Ghisoni, Corsica, France
+2016-02-14 08:05:20.582 Flickr Viewer[25796:7816978] Midi-Pyrenees, France : Grisolles, Midi-Pyrenees, France
+2016-02-14 08:05:20.588 Flickr Viewer[25796:7817007] Pays de la Loire, France : Le Croisic, Pays de la Loire, France
+2016-02-14 08:05:20.596 Flickr Viewer[25796:7817007] Picardy, France : Creil, Picardy, France
+2016-02-14 08:05:20.609 Flickr Viewer[25796:7817007] Alsace, France : Ebersmunster, Alsace, France
+2016-02-14 08:05:20.636 Flickr Viewer[25796:7816978] Rhone-Alpes, France : Laviolle, Rhone-Alpes, France
+2016-02-14 08:05:20.639 Flickr Viewer[25796:7816978] Poitou-Charentes, France : La Rochelle, Poitou-Charentes, France
+2016-02-14 08:05:20.642 Flickr Viewer[25796:7816987] Rhone-Alpes, France : Letraz, Rhone-Alpes, France
+2016-02-14 08:05:20.675 Flickr Viewer[25796:7816987] Aquitaine, France : Le Teich, Aquitaine, France
+2016-02-14 08:05:20.688 Flickr Viewer[25796:7816987] Rhone-Alpes, France : Civrieux, Rhone-Alpes, France
+2016-02-14 08:05:37.699 Flickr Viewer[25796:7817944] Midi-Pyrenees, France : La Couvertoirade, Midi-Pyrenees, France
+2016-02-14 08:05:37.700 Flickr Viewer[25796:7817948] Auvergne, France : Le Puy-en-Velay, Auvergne, France
+2016-02-14 08:05:37.700 Flickr Viewer[25796:7816983] Pays de la Loire, France : Saint-Gilles-Croix-de-Vie, Pays de la Loire, France
+2016-02-14 08:05:37.702 Flickr Viewer[25796:7816983] Upper Normandy, France : Petit-Couronne, Upper Normandy, France
+2016-02-14 08:05:37.703 Flickr Viewer[25796:7817948] Aquitaine, France : Hossegor, Aquitaine, France
+2016-02-14 08:05:37.704 Flickr Viewer[25796:7817950] Limousin, France : Limoges, Limousin, France
+2016-02-14 08:09:11.582 Flickr Viewer[25796:7829398] https://api.flickr.com/services/rest/?method=flickr.places.getTopPlacesList&place_type_id=7&format=json&nojsoncallback=1&api_key=d1e215427c75feabe8d08a22999919e7
+(lldb)
