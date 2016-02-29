@@ -10,5 +10,6 @@
 
 @interface ImageViewController : UIViewController <NSURLSessionDownloadDelegate, UIScrollViewDelegate>
 @property (strong, nonatomic) NSURL* imageLocation;
+@property (weak, nonatomic) IBOutlet UINavigationItem *imageViewerNavigation;
 
 @end

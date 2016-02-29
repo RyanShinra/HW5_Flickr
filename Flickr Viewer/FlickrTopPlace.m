@@ -2,21 +2,19 @@
 //  FlickrTopPlaces.m
 //  Flickr Viewer
 //
-//  Created by Ryan Osterday on 2/16/16.
+//  Created by Ryan Osterday on 2/20/16.
 //  Copyright © 2016 Ryan Osterday. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "FlickrPhotos.h"
-
+#import "FlickrTopPlace.h"
 
 @implementation FlickrTopPlace
-
 
 - (instancetype) initWithId: (id) placeId
                   PlaceName: (NSString*) placeName
                 CountryName: (NSString*) countryName
                   NumPhotos: (NSUInteger) numPhotos
+                 RegionName:(NSString *)regionName
 {
     //such weirdness....
     self = [super init];
@@ -28,7 +26,7 @@
     self.countryName = countryName;
     self.numPhotos  = numPhotos;
     self.placeId = placeId;
-    
+    self.regionName = regionName;
     return self;
 }
 

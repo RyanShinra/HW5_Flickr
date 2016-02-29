@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FlickrViewerTVC : UITableViewController
-
+@property (weak, nonatomic) IBOutlet UINavigationItem *controllerTitle;
+@property (strong, atomic) NSURL* presentationURL;
 @end

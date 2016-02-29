@@ -38,13 +38,16 @@
 + (NSArray<NSDictionary*>*) recentPhotosInfo
 {
     //TODO: Turn this class into a non-static version so we can track the photos / encapsulate properly
-    NSDate* now = [NSDate date];
+//    NSDate* now = [NSDate date];
     NSURL* urlForRecentPhotos = [FlickrFetcher URLForQuery:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&license=1,2,4,7&extras=original_format,description,geo,date_upload,owner_name"]];
     
     NSLog(@"%@", urlForRecentPhotos);
-    NSData* recentPhotosJson = [NSData dataWithContentsOfURL:urlForRecentPhotos];
-    
-    
+    return [FlickrPhotos photosInfoAtURL:urlForRecentPhotos];
+}
+
++ (NSArray< NSDictionary* >*) photosInfoAtURL: (NSURL*) readingURL
+{
+    NSData* recentPhotosJson = [NSData dataWithContentsOfURL:readingURL];
     
     NSDictionary* recentPhotosDict= [NSJSONSerialization JSONObjectWithData:recentPhotosJson options:0 error:NULL];
     //NSLog(@"%@", recentPhotosDict);
@@ -54,6 +57,7 @@
     return recentPhotosDict[@"photos"][@"photo"];
 }
 
+
 + (NSString*) photoTitle:(NSDictionary *)photo
 {
     return photo[FLICKR_PHOTO_TITLE];
@@ -62,9 +66,12 @@
 + (NSString*) photoDescription:(NSDictionary *)photo
 {
     id photoDescription = photo[FLICKR_PHOTO_DESCRIPTION];
-    
+    id photoOwnerName = photo[FLICKR_PHOTO_OWNER];
     if (photoDescription) {
         return photo[FLICKR_PHOTO_DESCRIPTION];
+    }
+    else if (photoOwnerName){
+        return [NSString stringWithFormat:@"Owner: %@", photoOwnerName];
     }
     else{
         return @"No Description.";
@@ -72,7 +79,7 @@
 
 }
 
-+ (void) topPlaces
++ (NSArray<FlickrTopPlace*>*) topPlaces
 {
     NSURL* urlForGeostuffs = [FlickrFetcher URLforTopPlaces];
     NSLog(@"%@", urlForGeostuffs);
@@ -86,6 +93,9 @@
     NSArray* topPlacesArray = [topPlacesDict valueForKeyPath:FLICKR_RESULTS_PLACES];
     NSMutableSet<id>* placeIdList = [[NSMutableSet alloc] initWithCapacity: [topPlacesArray count]];
 
+    NSMutableArray<FlickrTopPlace*>* topPlacesAnswer = [[NSMutableArray alloc]initWithCapacity:[topPlacesArray count]];
+    
+    
     for (NSDictionary* curPlaceInfo in topPlacesArray) {
         id curPlaceId = [curPlaceInfo valueForKeyPath:FLICKR_PLACE_ID];
         
@@ -96,21 +106,41 @@
             NSString* placeDescription = [curPlaceInfo valueForKeyPath:FLICKR_PLACE_NAME];
             
             NSArray<NSString*>* placeNames = [placeDescription componentsSeparatedByString: @","];
+            
 //            
 //            NSLog(@"Country:%@, Region:%@, City:%@",
 //                  placeNames[2],
 //                  placeNames[1],
 //                  placeNames[0]);
-            if([placeNames count] < 3){
-                NSLog(@"%@", placeNames);
+            
+            
+            NSInteger x = [curPlaceInfo [@"photo_count"] integerValue];
+            NSUInteger y = x < 0 ? 0 : (NSUInteger)x;
+            
+            NSString* countryName = [placeNames lastObject];
+            NSMutableString* placeName = [[NSMutableString alloc]init];
+            
+            NSUInteger numPlaceNamesToMerge = placeNames.count - 1;
+            
+            for (size_t i = 0; i < numPlaceNamesToMerge; ++i) {
+                [placeName appendString:placeNames[i]];
+                //don't put a comma after the last item
+                if (i < numPlaceNamesToMerge - 1) {
+                    [placeName appendString:@","];
+                }
             }
+            NSString* regionName = [FlickrFetcher extractRegionNameFromPlaceInformation:curPlaceInfo];
+            FlickrTopPlace* myTopPlace = [[FlickrTopPlace alloc]initWithId:curPlaceId
+                                                                 PlaceName:placeName
+                                                               CountryName:countryName
+                                                                 NumPhotos:y
+                                                                RegionName:regionName];
+            [topPlacesAnswer addObject:myTopPlace];
         }
     }
     
-    
     //Rediculously early return for debugging purposes
-    return;
-    
+    return topPlacesAnswer;
     
 #if 0
     
@@ -151,11 +181,8 @@
 
 
 
-
-
-
-
-
-
-
 @end
+
+
+
+

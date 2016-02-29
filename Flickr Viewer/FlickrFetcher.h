@@ -38,7 +38,7 @@ typedef enum {
 
 + (NSURL *)URLforTopPlaces;
 
-+ (NSURL *)URLforPhotosInPlace:(id)flickrPlaceId maxResults:(int)maxResults;
++ (NSURL *)URLforPhotosInPlace:(id)flickrPlaceId maxResults:(NSUInteger)maxResults;
 
 + (NSURL *)URLforPhoto:(NSDictionary *)photo format:(FlickrPhotoFormat)format;
 

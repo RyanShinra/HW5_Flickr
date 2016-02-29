@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,10 @@
 		941835711BFDDB9C001054C5 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941835701BFDDB9C001054C5 /* ImageViewController.m */; };
 		941E76EA1BF5F55C00AA709A /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941E76E91BF5F55C00AA709A /* Main_iPad.storyboard */; };
 		94367AAE1C70B56A00863434 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 94367AAD1C70B56A00863434 /* File */; };
+		946A94C41C810E7900E389BD /* FlickrPhotoHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946A94C31C810E7900E389BD /* FlickrPhotoHistoryTVC.swift */; };
+		9471B55A1C7D328B00CECF2B /* FlickrGeoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471B5591C7D328B00CECF2B /* FlickrGeoTableViewCell.m */; };
+		94D08A8A1C789B8B00248482 /* SortedGeoPlaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D08A891C789B8B00248482 /* SortedGeoPlaces.m */; };
+		94D08A8D1C789C0E00248482 /* FlickrTopPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D08A8C1C789C0E00248482 /* FlickrTopPlace.m */; };
 		94FC87101BF36B82006F8DBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FC870F1BF36B82006F8DBA /* main.m */; };
 		94FC87131BF36B82006F8DBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FC87121BF36B82006F8DBA /* AppDelegate.m */; };
 		94FC87191BF36B82006F8DBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94FC87171BF36B82006F8DBA /* Main.storyboard */; };
@@ -55,6 +59,14 @@
 		941835701BFDDB9C001054C5 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; usesTabs = 0; };
 		941E76E91BF5F55C00AA709A /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		94367AAD1C70B56A00863434 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		946A94C31C810E7900E389BD /* FlickrPhotoHistoryTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrPhotoHistoryTVC.swift; sourceTree = "<group>"; };
+		9471B5581C7D328B00CECF2B /* FlickrGeoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrGeoTableViewCell.h; sourceTree = "<group>"; };
+		9471B5591C7D328B00CECF2B /* FlickrGeoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrGeoTableViewCell.m; sourceTree = "<group>"; };
+		9471B55B1C8101D600CECF2B /* Flickr Viewer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flickr Viewer-Bridging-Header.h"; sourceTree = "<group>"; };
+		94D08A881C789B8B00248482 /* SortedGeoPlaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortedGeoPlaces.h; sourceTree = "<group>"; };
+		94D08A891C789B8B00248482 /* SortedGeoPlaces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortedGeoPlaces.m; sourceTree = "<group>"; };
+		94D08A8B1C789C0E00248482 /* FlickrTopPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrTopPlace.h; sourceTree = "<group>"; };
+		94D08A8C1C789C0E00248482 /* FlickrTopPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrTopPlace.m; sourceTree = "<group>"; };
 		94FC870B1BF36B81006F8DBA /* Flickr Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flickr Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94FC870F1BF36B82006F8DBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94FC87111BF36B82006F8DBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -120,12 +132,38 @@
 			isa = PBXGroup;
 			children = (
 				94FC87171BF36B82006F8DBA /* Main.storyboard */,
-				9415DA121C42A3E000A6D2C5 /* FlickrGeoPhotosTVC.h */,
-				9415DA131C42A3E000A6D2C5 /* FlickrGeoPhotosTVC.m */,
 				941E76E91BF5F55C00AA709A /* Main_iPad.storyboard */,
 				94FC871F1BF36B82006F8DBA /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		94D08A861C78986000248482 /* Flickr Photos */ = {
+			isa = PBXGroup;
+			children = (
+				9418356C1BF8D17D001054C5 /* FlickrPhotos.h */,
+				9418356D1BF8D17D001054C5 /* FlickrPhotos.m */,
+				94D08A881C789B8B00248482 /* SortedGeoPlaces.h */,
+				94D08A891C789B8B00248482 /* SortedGeoPlaces.m */,
+				94D08A8B1C789C0E00248482 /* FlickrTopPlace.h */,
+				94D08A8C1C789C0E00248482 /* FlickrTopPlace.m */,
+			);
+			name = "Flickr Photos";
+			sourceTree = "<group>";
+		};
+		94D08A871C78989700248482 /* TableViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				941835181BF7904D001054C5 /* FlickrViewerTVC.h */,
+				941835191BF7904D001054C5 /* FlickrViewerTVC.m */,
+				9415DA121C42A3E000A6D2C5 /* FlickrGeoPhotosTVC.h */,
+				9415DA131C42A3E000A6D2C5 /* FlickrGeoPhotosTVC.m */,
+				9471B5581C7D328B00CECF2B /* FlickrGeoTableViewCell.h */,
+				9471B5591C7D328B00CECF2B /* FlickrGeoTableViewCell.m */,
+				946A94C31C810E7900E389BD /* FlickrPhotoHistoryTVC.swift */,
+				9471B55B1C8101D600CECF2B /* Flickr Viewer-Bridging-Header.h */,
+			);
+			name = TableViewControllers;
 			sourceTree = "<group>";
 		};
 		94FC87021BF36B81006F8DBA = {
@@ -152,15 +190,13 @@
 		94FC870D1BF36B82006F8DBA /* Flickr Viewer */ = {
 			isa = PBXGroup;
 			children = (
+				94D08A871C78989700248482 /* TableViewControllers */,
+				94D08A861C78986000248482 /* Flickr Photos */,
 				94FC870E1BF36B82006F8DBA /* Supporting Files */,
 				9418356A1BF8D0EF001054C5 /* App Delegate */,
 				94FC871A1BF36B82006F8DBA /* Flickr_Viewer.xcdatamodeld */,
 				9418356B1BF8D0FC001054C5 /* Storyboards */,
 				941835671BF8C422001054C5 /* Flickr Fetcher */,
-				941835181BF7904D001054C5 /* FlickrViewerTVC.h */,
-				941835191BF7904D001054C5 /* FlickrViewerTVC.m */,
-				9418356C1BF8D17D001054C5 /* FlickrPhotos.h */,
-				9418356D1BF8D17D001054C5 /* FlickrPhotos.m */,
 				9418356F1BFDDB9C001054C5 /* ImageViewController.h */,
 				941835701BFDDB9C001054C5 /* ImageViewController.m */,
 			);
@@ -257,7 +293,7 @@
 		94FC87031BF36B81006F8DBA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Ryan Osterday";
 				TargetAttributes = {
 					94FC870A1BF36B81006F8DBA = {
@@ -277,7 +313,7 @@
 				};
 			};
 			buildConfigurationList = 94FC87061BF36B81006F8DBA /* Build configuration list for PBXProject "Flickr Viewer" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -330,9 +366,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94D08A8A1C789B8B00248482 /* SortedGeoPlaces.m in Sources */,
 				94FC87131BF36B82006F8DBA /* AppDelegate.m in Sources */,
+				9471B55A1C7D328B00CECF2B /* FlickrGeoTableViewCell.m in Sources */,
 				9418356E1BF8D17D001054C5 /* FlickrPhotos.m in Sources */,
+				946A94C41C810E7900E389BD /* FlickrPhotoHistoryTVC.swift in Sources */,
 				9418351A1BF7904D001054C5 /* FlickrViewerTVC.m in Sources */,
+				94D08A8D1C789C0E00248482 /* FlickrTopPlace.m in Sources */,
 				94FC871C1BF36B82006F8DBA /* Flickr_Viewer.xcdatamodeld in Sources */,
 				941835661BF8BF69001054C5 /* FlickrFetcher.m in Sources */,
 				941835711BFDDB9C001054C5 /* ImageViewController.m in Sources */,
@@ -412,6 +452,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -431,7 +473,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos9.1;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Flickr Viewer/Flickr Viewer-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -456,6 +499,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -469,7 +514,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos9.1;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Flickr Viewer/Flickr Viewer-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -479,10 +525,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Flickr Viewer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RSO.Flickr-Viewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Flickr Viewer/Flickr Viewer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -491,10 +540,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Flickr Viewer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RSO.Flickr-Viewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Flickr Viewer/Flickr Viewer-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
