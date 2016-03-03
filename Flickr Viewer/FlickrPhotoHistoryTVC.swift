@@ -11,15 +11,15 @@ import Foundation
     
 class FlickrPhotoHistoryTVC: UITableViewController {
 
-    var sortedHistory: Array<NSDictionary> = [];
+    var sortedHistory: Array<NSDictionary> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl?.beginRefreshing();
-        readDefaultsForUser();
-        self.tableView.reloadData();
-        self.refreshControl?.endRefreshing();
+        self.refreshControl?.beginRefreshing()
+        readDefaultsForUser()
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,36 +28,40 @@ class FlickrPhotoHistoryTVC: UITableViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        viewDidLoad()
+    }
+    
     @IBAction func didRefreshControll(sender: UIRefreshControl, forEvent event: UIEvent)
     {
-        sender.beginRefreshing();
-        readDefaultsForUser();
-        self.tableView.reloadData();
-        sender.endRefreshing();
+        sender.beginRefreshing()
+        readDefaultsForUser()
+        self.tableView.reloadData()
+        sender.endRefreshing()
         
     }
 
     func readDefaultsForUser()
     {
         //We need to clear the array
-        self.sortedHistory.removeAll(keepCapacity: true);
+        self.sortedHistory.removeAll(keepCapacity: true)
         
         //TODO: We will want to promote this to its own class soon
-        let myDefaults = NSUserDefaults.standardUserDefaults();
+        let myDefaults = NSUserDefaults.standardUserDefaults()
         if let recentPhotos: Array<AnyObject> = myDefaults.arrayForKey("RecentPhotos"){
             for curPhotoInfo in recentPhotos{
                 if let curPhotoInfoAsNSDictionary = curPhotoInfo as? NSDictionary{
-                    let curPhotoKeys = curPhotoInfoAsNSDictionary.allKeys;
+                    let curPhotoKeys = curPhotoInfoAsNSDictionary.allKeys
                     let hasDateTimeKey = curPhotoKeys.contains({ (x:AnyObject) -> Bool in
                         if let xString = x as? String{
                             return xString == "accessDateTime"
                         }
-                        return false;
-                    });//End closure and call for contains
+                        return false
+                    })//End closure and call for contains
                     
                     //If it has a key (and we're still inside the "if it's a dictionary" block)
                     if hasDateTimeKey{
-                        self.sortedHistory.append(curPhotoInfoAsNSDictionary);
+                        self.sortedHistory.append(curPhotoInfoAsNSDictionary)
                     }
                 }//end if if let typecast block to NSDictionary
             }//end for loop over all the recentPhotos
@@ -68,9 +72,9 @@ class FlickrPhotoHistoryTVC: UITableViewController {
                 if let rightDate = right["accessDateTime"] as? NSDate{
                     return leftDate.timeIntervalSinceNow < rightDate.timeIntervalSinceNow
                 }
-                return false;
+                return false
             }
-            return false;
+            return false
         }//end sort in place
     }//End function
     
@@ -88,7 +92,7 @@ class FlickrPhotoHistoryTVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.sortedHistory.count;
+        return self.sortedHistory.count
     }
 
     
@@ -102,14 +106,18 @@ class FlickrPhotoHistoryTVC: UITableViewController {
             cell.textLabel?.text = "Untitled"
         }
         if let lastAccessDate:NSDate = self.sortedHistory[indexPath.row]["accessDateTime"] as? NSDate{
-            let myDateFormatter : NSDateFormatter = NSDateFormatter.init();
+            let myDateFormatter : NSDateFormatter = NSDateFormatter.init()
             myDateFormatter.timeStyle = NSDateFormatterStyle.LongStyle
             myDateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-            let lastAccessDateString = myDateFormatter.stringFromDate(lastAccessDate);
+            let lastAccessDateString = myDateFormatter.stringFromDate(lastAccessDate)
             
-            cell.detailTextLabel?.text = "Last Accessed: " + lastAccessDateString;
+            cell.detailTextLabel?.text = "Last Accessed: " + lastAccessDateString
             
         }
+        
+        
+        
+        
         return cell
     }
     
@@ -149,14 +157,18 @@ class FlickrPhotoHistoryTVC: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
+    
+    /// MARK: - Navigation
+    //TODO: Consider Replacing this by inheriting from FlickrViewerTVC
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let sendingCell = sender as? UITableViewCell{
+            
+        }
+        
     }
-    */
+    
 
 }
