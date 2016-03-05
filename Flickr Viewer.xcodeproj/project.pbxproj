@@ -15,6 +15,7 @@
 		941E76EA1BF5F55C00AA709A /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941E76E91BF5F55C00AA709A /* Main_iPad.storyboard */; };
 		94367AAE1C70B56A00863434 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 94367AAD1C70B56A00863434 /* File */; };
 		946A94C41C810E7900E389BD /* FlickrPhotoHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946A94C31C810E7900E389BD /* FlickrPhotoHistoryTVC.swift */; };
+		946A94C81C89A09D00E389BD /* RootSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 946A94C71C89A09D00E389BD /* RootSplitViewController.m */; };
 		9471B55A1C7D328B00CECF2B /* FlickrGeoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9471B5591C7D328B00CECF2B /* FlickrGeoTableViewCell.m */; };
 		94D08A8A1C789B8B00248482 /* SortedGeoPlaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D08A891C789B8B00248482 /* SortedGeoPlaces.m */; };
 		94D08A8D1C789C0E00248482 /* FlickrTopPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D08A8C1C789C0E00248482 /* FlickrTopPlace.m */; };
@@ -60,6 +61,8 @@
 		941E76E91BF5F55C00AA709A /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		94367AAD1C70B56A00863434 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		946A94C31C810E7900E389BD /* FlickrPhotoHistoryTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrPhotoHistoryTVC.swift; sourceTree = "<group>"; };
+		946A94C61C89A09D00E389BD /* RootSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootSplitViewController.h; path = "Flickr Viewer/RootSplitViewController.h"; sourceTree = "<group>"; };
+		946A94C71C89A09D00E389BD /* RootSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootSplitViewController.m; path = "Flickr Viewer/RootSplitViewController.m"; sourceTree = "<group>"; };
 		9471B5581C7D328B00CECF2B /* FlickrGeoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrGeoTableViewCell.h; sourceTree = "<group>"; };
 		9471B5591C7D328B00CECF2B /* FlickrGeoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrGeoTableViewCell.m; sourceTree = "<group>"; };
 		9471B55B1C8101D600CECF2B /* Flickr Viewer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flickr Viewer-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -138,6 +141,16 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		946A94C51C89A03600E389BD /* SplitViewController */ = {
+			isa = PBXGroup;
+			children = (
+				946A94C61C89A09D00E389BD /* RootSplitViewController.h */,
+				946A94C71C89A09D00E389BD /* RootSplitViewController.m */,
+			);
+			name = SplitViewController;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		94D08A861C78986000248482 /* Flickr Photos */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +174,6 @@
 				9471B5581C7D328B00CECF2B /* FlickrGeoTableViewCell.h */,
 				9471B5591C7D328B00CECF2B /* FlickrGeoTableViewCell.m */,
 				946A94C31C810E7900E389BD /* FlickrPhotoHistoryTVC.swift */,
-				9471B55B1C8101D600CECF2B /* Flickr Viewer-Bridging-Header.h */,
 			);
 			name = TableViewControllers;
 			sourceTree = "<group>";
@@ -190,6 +202,8 @@
 		94FC870D1BF36B82006F8DBA /* Flickr Viewer */ = {
 			isa = PBXGroup;
 			children = (
+				946A94C51C89A03600E389BD /* SplitViewController */,
+				9471B55B1C8101D600CECF2B /* Flickr Viewer-Bridging-Header.h */,
 				94D08A871C78989700248482 /* TableViewControllers */,
 				94D08A861C78986000248482 /* Flickr Photos */,
 				94FC870E1BF36B82006F8DBA /* Supporting Files */,
@@ -367,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94D08A8A1C789B8B00248482 /* SortedGeoPlaces.m in Sources */,
+				946A94C81C89A09D00E389BD /* RootSplitViewController.m in Sources */,
 				94FC87131BF36B82006F8DBA /* AppDelegate.m in Sources */,
 				9471B55A1C7D328B00CECF2B /* FlickrGeoTableViewCell.m in Sources */,
 				9418356E1BF8D17D001054C5 /* FlickrPhotos.m in Sources */,
@@ -577,6 +592,7 @@
 		94FC87421BF36B82006F8DBA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				INFOPLIST_FILE = "Flickr ViewerUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RSO.Flickr-ViewerUITests";
@@ -589,6 +605,7 @@
 		94FC87431BF36B82006F8DBA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				INFOPLIST_FILE = "Flickr ViewerUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RSO.Flickr-ViewerUITests";

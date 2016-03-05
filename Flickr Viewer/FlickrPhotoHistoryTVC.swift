@@ -8,7 +8,7 @@
 
 import UIKit
 import Foundation
-    
+
 class FlickrPhotoHistoryTVC: UITableViewController {
 
     var sortedHistory: Array<NSDictionary> = []
@@ -164,11 +164,18 @@ class FlickrPhotoHistoryTVC: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if let sendingCell = sender as? UITableViewCell{
+        if segue.identifier == "ShowPhotoForHistoryItem"{
             
-        }
-        
-    }
+            if let sendingCell = sender as? UITableViewCell{
+                if let selectedIndex = self.tableView.indexPathForCell(sendingCell)?.row{
+                    let selectedHistory: NSDictionary = self.sortedHistory[selectedIndex]
+                    if let segueDestination: ImageViewController = segue.destinationViewController as? ImageViewController{
+                        segueDestination.imageLocation = FlickrFetcher.URLforPhoto( selectedHistory as [NSObject : AnyObject], format: FlickrPhotoFormatLarge)
+                    }
+                }//end if let selectedIndex from indexpath.row
+            }//end if let sendingCell is kind of class UITableViewCell
+        }//end if segue is showPhotoHistoryItem
+    }//end function prepareForSegue
     
-
-}
+    
+    }

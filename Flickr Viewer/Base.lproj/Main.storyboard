@@ -223,7 +223,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="lxT-NV-caO" kind="show" id="yUb-5u-2pI"/>
+                                    <segue destination="lxT-NV-caO" kind="show" identifier="ShowPhotoForHistoryItem" id="yUb-5u-2pI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

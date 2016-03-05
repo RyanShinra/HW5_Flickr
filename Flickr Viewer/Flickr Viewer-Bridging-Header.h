@@ -4,4 +4,9 @@
 
 #import "Foundation/Foundation.h"
 #import <UIKit/UIKit.h>
-#import "FlickrFetcher.h"
+
+//Users/Ryan/Projects/Flickr Viewer/Flickr Viewer/ImageViewController.h
+#import "./ImageViewController.h"
+
+///Users/Ryan/Projects/Flickr Viewer/Flickr Viewer/FlickrFetcher.h
+#import "./FlickrFetcher.h"
