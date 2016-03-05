@@ -8,29 +8,30 @@
         <scene sceneID="wxp-8b-xmi">
             <objects>
                 <splitViewController id="zLA-Uy-9iI" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
-                        <segue destination="zqn-N6-zl8" kind="relationship" relationship="detailViewController" id="7FY-Hd-LwG"/>
-                        <segue destination="MKK-kV-Sa3" kind="relationship" relationship="masterViewController" id="RaJ-yy-RKd"/>
+                        <segue destination="zqn-N6-zl8" kind="relationship" relationship="detailViewController" id="uLg-in-Mdj"/>
+                        <segue destination="PDd-Kc-Abm" kind="relationship" relationship="masterViewController" id="0kh-Ju-XyA"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1b-ST-xIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="-1761"/>
+            <point key="canvasLocation" x="-1675" y="-1897"/>
         </scene>
         <!--Recent Photos-->
         <scene sceneID="NFQ-BJ-3ae">
             <objects>
                 <tableViewController id="MKK-kV-Sa3" customClass="FlickrViewerTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JBL-Jc-aZI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="TopLeft" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FlickrCell" textLabel="mAM-Ye-MgA" detailTextLabel="raJ-5E-dL8" style="IBUITableViewCellStyleSubtitle" id="SgK-KX-XHi">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="SgK-KX-XHi" id="3rw-8a-XfH">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mAM-Ye-MgA">
@@ -69,22 +70,23 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Gj-UN-6w9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="-900"/>
+            <point key="canvasLocation" x="708" y="-992"/>
         </scene>
         <!--Photos By Location-->
         <scene sceneID="tgk-9j-kgK">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2SG-Mc-I8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="CUm-9X-Ks2" customClass="FlickrGeoPhotosTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cVr-3g-tcF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="left" selectionStyle="default" indentationWidth="10" reuseIdentifier="FlickrGeoCell" textLabel="sd2-Ka-cCU" detailTextLabel="wW4-lI-I0k" style="IBUITableViewCellStyleSubtitle" id="H8o-xE-TDp" customClass="FlickrGeoTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="H8o-xE-TDp" id="O5R-mh-tpa">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sd2-Ka-cCU">
@@ -123,13 +125,13 @@
                         </connections>
                     </refreshControl>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2SG-Mc-I8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="-121"/>
+            <point key="canvasLocation" x="-18" y="-129"/>
         </scene>
         <!--Geography-->
         <scene sceneID="i2P-uj-cEq">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y5e-ns-kD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="TfT-xD-dGW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Geography" id="z6J-WM-HAo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AnS-JC-kt3">
@@ -140,9 +142,8 @@
                         <segue destination="CUm-9X-Ks2" kind="relationship" relationship="rootViewController" id="Imw-aa-rM1"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y5e-ns-kD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="-121"/>
+            <point key="canvasLocation" x="-482" y="-129"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="pLv-gd-keX">
@@ -153,14 +154,14 @@
                         <viewControllerLayoutGuide type="bottom" id="qCk-GY-iqw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ncf-Uh-8jT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nct-Wo-Eow">
-                                <rect key="frame" x="0.0" y="-44" width="600" height="644"/>
+                                <rect key="frame" x="0.0" y="-44" width="768" height="1068"/>
                             </scrollView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PFw-oH-M5V">
-                                <rect key="frame" x="0.0" y="299" width="600" height="2"/>
+                                <rect key="frame" x="0.0" y="511" width="768" height="2"/>
                             </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,22 +201,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8I-xY-Iyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2700" y="-900"/>
+            <point key="canvasLocation" x="62" y="-1897"/>
         </scene>
         <!--Photo History Controller-->
         <scene sceneID="zFu-c9-gyV">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GNz-sS-ILM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="owu-cf-cem" userLabel="Photo History Controller" customClass="FlickrPhotoHistoryTVC" customModule="Flickr_Viewer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZZ0-0L-Llr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="left" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoHistoryCell" textLabel="0yS-ii-Wyz" detailTextLabel="Xhl-K3-Kuy" style="IBUITableViewCellStyleSubtitle" id="u1l-Sj-dqD" customClass="FlickrGeoTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="u1l-Sj-dqD" id="P5M-cK-mwP">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0yS-ii-Wyz">
@@ -249,13 +251,13 @@
                         </connections>
                     </refreshControl>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GNz-sS-ILM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="627"/>
+            <point key="canvasLocation" x="-18" y="979"/>
         </scene>
         <!--History Item-->
         <scene sceneID="77b-AM-nRE">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTp-kk-Q1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="QWP-Ib-naQ" userLabel="History Item" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="History" id="fVp-Ou-qh5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="O71-P1-NKb">
@@ -266,13 +268,13 @@
                         <segue destination="owu-cf-cem" kind="relationship" relationship="rootViewController" id="5Tx-6c-uVQ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zTp-kk-Q1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="627"/>
+            <point key="canvasLocation" x="-882" y="483"/>
         </scene>
         <!--Recent-->
         <scene sceneID="xTi-og-JV4">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ASc-94-0To" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="53c-Lr-5nc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Recent" id="cWG-ck-7rN"/>
                     <toolbarItems/>
@@ -285,13 +287,13 @@
                         <segue destination="MKK-kV-Sa3" kind="relationship" relationship="rootViewController" id="kSo-hH-tO5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ASc-94-0To" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="-900"/>
+            <point key="canvasLocation" x="-882" y="-676"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="27d-4k-XLe">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9Y-kt-kPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="PDd-Kc-Abm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="xAC-ck-uZs">
@@ -304,12 +306,11 @@
                         <segue destination="QWP-Ib-naQ" kind="relationship" relationship="viewControllers" id="aVM-SR-m1V"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i9Y-kt-kPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1682" y="-121"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RaJ-yy-RKd"/>
+        <segue reference="BCS-d6-5GO"/>
     </inferredMetricsTieBreakers>
 </document>

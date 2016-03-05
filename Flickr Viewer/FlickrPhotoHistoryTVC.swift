@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class FlickrPhotoHistoryTVC: UITableViewController {
+class FlickrPhotoHistoryTVC: FlickrViewerTVC {
 
     var sortedHistory: Array<NSDictionary> = []
     
@@ -70,7 +70,7 @@ class FlickrPhotoHistoryTVC: UITableViewController {
         self.sortedHistory.sortInPlace { (left:NSDictionary, right:NSDictionary) -> Bool in
             if let leftDate = left["accessDateTime"] as? NSDate{
                 if let rightDate = right["accessDateTime"] as? NSDate{
-                    return leftDate.timeIntervalSinceNow < rightDate.timeIntervalSinceNow
+                    return leftDate.timeIntervalSinceNow > rightDate.timeIntervalSinceNow
                 }
                 return false
             }
@@ -121,6 +121,14 @@ class FlickrPhotoHistoryTVC: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if let detailViewAsIVC = self.splitViewController?.viewControllers[1] as? ImageViewController{
+            self.prepareImageViewController(detailViewAsIVC, toDisplayPhoto: self.sortedHistory[indexPath.row] as [NSObject : AnyObject])
+        }
+        self.viewDidLoad()
+        self.tableView.reloadData()
+    }
 
     /*
     // Override to support conditional editing of the table view.

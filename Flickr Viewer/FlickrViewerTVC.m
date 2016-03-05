@@ -9,11 +9,11 @@
 #import "FlickrViewerTVC.h"
 #import "FlickrFetcher.h"
 #import "FlickrPhotos.h"
-#import "ImageViewController.h"
 #import <Foundation/Foundation.h>
 
 @interface FlickrViewerTVC ()
 - (void) fetchTopPhotos;
+
 @property (nonatomic, strong) NSArray<NSDictionary*>* recentPhotos;
 @end
 
@@ -141,6 +141,18 @@
 */
 
 
+
+
+#pragma mark - Table View Delegate
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [self prepareImageViewController: self.splitViewController.viewControllers[1]
+                      toDisplayPhoto: self.recentPhotos[indexPath.row]];
+}
+
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -164,105 +176,111 @@
                     
                     //fetch the photo meta data out of the array
                     NSDictionary* selectedPhoto = self.recentPhotos[selectedRow];
-                    
-                    //Get the recent photos Array
-                    NSUserDefaults* myDefaults = [NSUserDefaults standardUserDefaults];
-                    NSMutableArray<NSDictionary*>* recentPhotos = [[NSMutableArray alloc] initWithArray: [myDefaults arrayForKey:@"RecentPhotos"]];
-                    
-                    //Search the recent photos array for the photo just selected
-                    __block bool found = NO;
-                    __block NSDictionary* matchingPhotoInfo = nil;
-                    [recentPhotos enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                        if(obj[FLICKR_PHOTO_ID] == selectedPhoto[FLICKR_PHOTO_ID]){
-                            found = YES;
-                            *stop = YES;
-                            matchingPhotoInfo = obj;
-                        }
-                    }];
-                    
-                    
-                    //This will either be the item already in the history for this item
-                    // or a new one based on the selected photo
-                    NSMutableDictionary* newHistoryItem = nil;
-                    
-                    //This will be either the matching photo just found or the oldest one in the collection (or nil)
-                    __block NSDictionary* historyItemToRemove = nil;
-                    //Let's stash a date time into the dictionary so we can use it when we fish it out of the NSUserDefaults
-                    NSDate* nowNow = [NSDate dateWithTimeIntervalSinceNow:0];
-                    
-                    __block NSDate* oldestTime = nowNow;
-                    
-                   
-                    if (found) {
-                        //The thing that comes out of the defaults is immutable, so we have to make a copy (how C++ of us)
-                        newHistoryItem = [[NSMutableDictionary alloc]initWithDictionary:matchingPhotoInfo];
-                        historyItemToRemove = matchingPhotoInfo;
-                    }
-                    else{
-                        //This hasn't been stored before, so let's make a new one
-                        newHistoryItem = [NSMutableDictionary dictionaryWithDictionary: selectedPhoto];
-                        
-                        //OK, let's find the oldest one, if there are more than 30
-                        if ([recentPhotos count] >= 30) {
-                            //Loop over all the items comparing the time they were put into the array
-                            [recentPhotos enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                                NSDate* objDate = obj[@"accessDateTime"];
-                                //The dictionary may not actually have this field, so we must check
-                                if (objDate) {
-                                    //Perversely, we don't know if the type was modified since it was stored
-                                    if ([objDate isKindOfClass:[NSDate class]]) {
-                                        //Ok, we finally know that we have a NSDate to check
-                                        //Time intervals in the past should be negative, so older times are more negative
-                                        if ([objDate timeIntervalSinceNow] < [oldestTime timeIntervalSinceNow]) {
-                                            oldestTime = objDate;
-                                            historyItemToRemove = obj;
-                                        }//end if this is the oldest thing
-                                        
-                                    }//end if this is a date
-                                    else{
-                                        //This thing has been corrupted, it might as well be the thing we get rid of
-                                        historyItemToRemove = obj;
-                                        *stop = YES;
-                                    }//end else this is corrupted
-                                }//end if there is a date object
-                                else{
-                                    historyItemToRemove = obj;
-                                    *stop = YES;
-                                }//end else there isn't a date object we should remove it
-                            }];//end enumeration block
-                        }//end if there were 30+ photos
-                    }//end if this was found or not
-                    
-                    if (historyItemToRemove) {
-                        [recentPhotos removeObject:historyItemToRemove];
-                    }
-                    
-                    //new history item needs its timestamp
-                    //Technically, adding a new key/value pair to the dictionary will change it from the version
-                    // returned by Flickr, but since we don't have to sent it back to flickr and we're not modifying
-                    // any of those keys, we should be ok.
-                    newHistoryItem[@"accessDateTime"] = nowNow;
-                    
-                    //Finally, we can add a history item
-                    [recentPhotos addObject:newHistoryItem];
-                    
-                    //now put the array back into the defaults (actualy, we're replacing it)
-                    [myDefaults setObject:recentPhotos forKey:@"RecentPhotos"];
-
-                    //Actualy save the data
-                    [myDefaults synchronize];
-                    //Get the URL for the photo in "Normal Size"
-                    NSURL* photoURL = [FlickrFetcher URLforPhoto:selectedPhoto
-                                                          format:FlickrPhotoFormatLarge];
-                    
-                    //Inform the transitioning VC that it will be going to this address
-                    destIVC.imageLocation = photoURL;
-                    destIVC.imageViewerNavigation.title = sourceCell.textLabel.text;
-                    
+                    [self prepareImageViewController:destIVC toDisplayPhoto:selectedPhoto];
                 }
             }
         }
     }
+}
+
+
+- (void) prepareImageViewController: (ImageViewController*) destIVC toDisplayPhoto:(NSDictionary*) selectedPhoto
+{
+    
+    //Get the recent photos Array
+    NSUserDefaults* myDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray<NSDictionary*>* recentPhotos = [[NSMutableArray alloc] initWithArray: [myDefaults arrayForKey:@"RecentPhotos"]];
+    
+    //Search the recent photos array for the photo just selected
+    __block bool found = NO;
+    __block NSDictionary* matchingPhotoInfo = nil;
+    [recentPhotos enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if(obj[FLICKR_PHOTO_ID] == selectedPhoto[FLICKR_PHOTO_ID]){
+            found = YES;
+            *stop = YES;
+            matchingPhotoInfo = obj;
+        }
+    }];
+    
+    
+    //This will either be the item already in the history for this item
+    // or a new one based on the selected photo
+    NSMutableDictionary* newHistoryItem = nil;
+    
+    //This will be either the matching photo just found or the oldest one in the collection (or nil)
+    __block NSDictionary* historyItemToRemove = nil;
+    //Let's stash a date time into the dictionary so we can use it when we fish it out of the NSUserDefaults
+    NSDate* nowNow = [NSDate dateWithTimeIntervalSinceNow:0];
+    
+    __block NSDate* oldestTime = nowNow;
+    
+    
+    if (found) {
+        //The thing that comes out of the defaults is immutable, so we have to make a copy (how C++ of us)
+        newHistoryItem = [[NSMutableDictionary alloc]initWithDictionary:matchingPhotoInfo];
+        historyItemToRemove = matchingPhotoInfo;
+    }
+    else{
+        //This hasn't been stored before, so let's make a new one
+        newHistoryItem = [NSMutableDictionary dictionaryWithDictionary: selectedPhoto];
+        
+        //OK, let's find the oldest one, if there are more than 30
+        if ([recentPhotos count] >= 30) {
+            //Loop over all the items comparing the time they were put into the array
+            [recentPhotos enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                NSDate* objDate = obj[@"accessDateTime"];
+                //The dictionary may not actually have this field, so we must check
+                if (objDate) {
+                    //Perversely, we don't know if the type was modified since it was stored
+                    if ([objDate isKindOfClass:[NSDate class]]) {
+                        //Ok, we finally know that we have a NSDate to check
+                        //Time intervals in the past should be negative, so older times are more negative
+                        if ([objDate timeIntervalSinceNow] < [oldestTime timeIntervalSinceNow]) {
+                            oldestTime = objDate;
+                            historyItemToRemove = obj;
+                        }//end if this is the oldest thing
+                        
+                    }//end if this is a date
+                    else{
+                        //This thing has been corrupted, it might as well be the thing we get rid of
+                        historyItemToRemove = obj;
+                        *stop = YES;
+                    }//end else this is corrupted
+                }//end if there is a date object
+                else{
+                    historyItemToRemove = obj;
+                    *stop = YES;
+                }//end else there isn't a date object we should remove it
+            }];//end enumeration block
+        }//end if there were 30+ photos
+    }//end if this was found or not
+    
+    if (historyItemToRemove) {
+        [recentPhotos removeObject:historyItemToRemove];
+    }
+    
+    //new history item needs its timestamp
+    //Technically, adding a new key/value pair to the dictionary will change it from the version
+    // returned by Flickr, but since we don't have to sent it back to flickr and we're not modifying
+    // any of those keys, we should be ok.
+    newHistoryItem[@"accessDateTime"] = nowNow;
+    
+    //Finally, we can add a history item
+    [recentPhotos addObject:newHistoryItem];
+    
+    //now put the array back into the defaults (actualy, we're replacing it)
+    [myDefaults setObject:recentPhotos forKey:@"RecentPhotos"];
+    
+    //Actualy save the data
+    [myDefaults synchronize];
+    //Get the URL for the photo in "Normal Size"
+    NSURL* photoURL = [FlickrFetcher URLforPhoto:selectedPhoto
+                                          format:FlickrPhotoFormatLarge];
+    
+    //Inform the transitioning VC that it will be going to this address
+    destIVC.imageLocation = photoURL;
+    destIVC.imageViewerNavigation.title = [FlickrPhotos photoTitle:selectedPhoto];
+
 }
 
 

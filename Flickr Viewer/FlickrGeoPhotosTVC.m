@@ -89,11 +89,11 @@
 
     //TOOD: This is obviously only for English (This whole thing is only for English)
     if (topPlaceForCell.numPhotos == 1) {
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld Photo", topPlaceForCell.numPhotos];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld Photo", (unsigned long)topPlaceForCell.numPhotos];
     }
     else {
     //This is kinda odd syntax... but it works.
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld Photos", topPlaceForCell.numPhotos];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld Photos", (unsigned long)topPlaceForCell.numPhotos];
     }
     
     if([cell isKindOfClass:[FlickrGeoTableViewCell class]]){
