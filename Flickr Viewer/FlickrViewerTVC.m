@@ -146,9 +146,27 @@
 #pragma mark - Table View Delegate
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (self.splitViewController.viewControllers.count > 1 ) {
+        UIViewController* targetVC = self.splitViewController.viewControllers[1];
+        
+        //Check to see if it is embedded in a navigation controller
+        if ([targetVC isKindOfClass:[UINavigationController class]]) {
+            UINavigationController* targetNavVC = (UINavigationController*) targetVC;
+            targetVC = [targetNavVC.viewControllers firstObject];
+        }
+        //Do a type check before calling into the prepare image view controller
+        if ([targetVC isKindOfClass:[ImageViewController class]]) {
+            ImageViewController* destIVC = (ImageViewController*) targetVC;
+            [self prepareImageViewController: destIVC
+                              toDisplayPhoto: self.recentPhotos[indexPath.row]];
+        }
+    }
+    else{
+//        ImageViewController* destIVC = [[ImageViewController alloc]init];
+//        [self.parentViewController performSegueWithIdentifier:@"transitionToImageViewController" sender:self];
+    }
     
-    [self prepareImageViewController: self.splitViewController.viewControllers[1]
-                      toDisplayPhoto: self.recentPhotos[indexPath.row]];
+    
 }
 
 

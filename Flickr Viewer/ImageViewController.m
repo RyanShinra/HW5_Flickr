@@ -9,7 +9,7 @@
 #import "ImageViewController.h"
 
 
-@interface ImageViewController ()
+@interface ImageViewController () <UISplitViewControllerDelegate>
 - (void) downloadImage;
 
 @property (strong, nonatomic) UIImageView* imageView;
@@ -180,4 +180,37 @@
 //    self.minimumZoom = self.scrollView.zoomScale;
     //self.scrollView.minimumZoomScale = self.minimumZoom;
 }
+
+#pragma mark - UISplitViewDelegate
+- (void) awakeFromNib
+{
+    self.splitViewController.delegate = self;
+}
+
+
+- (BOOL) splitViewController:(UISplitViewController *)svc
+    shouldHideViewController:(UIViewController *)vc
+               inOrientation:(UIInterfaceOrientation)orientation
+{
+    return UIInterfaceOrientationIsPortrait(orientation);
+}
+
+- (void) splitViewController:(UISplitViewController *)svc
+      willHideViewController:(UIViewController *)aViewController
+           withBarButtonItem:(UIBarButtonItem *)barButtonItem
+        forPopoverController:(UIPopoverController *)pc
+{
+    barButtonItem.title = aViewController.title;
+    //barButtonItem.title = @"back";
+    self.navigationItem.leftBarButtonItem = barButtonItem;
+}
+
+- (void) splitViewController:(UISplitViewController *)svc
+      willShowViewController:(UIViewController *)aViewController
+   invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    self.navigationItem.leftBarButtonItem = nil;
+}
+
+
 @end
